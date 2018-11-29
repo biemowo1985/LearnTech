@@ -1,9 +1,12 @@
+//Load nodejs modules
 var fs = require('fs');
 var http = require('http');
 var tplObj = require('art-template');
 var path = require('path');
 
+//Create server instance
 var server = http.createServer();
+//Bind request event
 server.on('request', function (req, res) {
     if (req.url === '/') {
         var filePath = path.resolve(__dirname, './Templates/template.html');
@@ -21,7 +24,7 @@ server.on('request', function (req, res) {
         });
     }
 });
-
+//Listen to the port 3000
 server.listen(3000, function () {
     console.log('Server is running');
 });

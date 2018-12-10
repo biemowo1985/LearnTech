@@ -6,6 +6,7 @@ ipcMain.on('sendM', function (event, data) {
 });
 
 ipcMain.on('sendReply', function (event, data) {
+    console.log(data);
     event.sender.send('reply', 'This is reply message from main process');
 });
 

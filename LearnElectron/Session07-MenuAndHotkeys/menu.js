@@ -3,7 +3,7 @@ const {Menu}=require('electron');
 
 let template=[
     {
-        label:'File',
+        label:'Menu File',
         submenu:[
             {
                 label:'New File',
@@ -21,7 +21,7 @@ let template=[
         ]
     },
     {
-        label:'Edit',
+        label:'Menu Edit',
         submenu:[
             {
                 label:'Copy',

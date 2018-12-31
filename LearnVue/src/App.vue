@@ -29,8 +29,8 @@
         <p>None.</p>
       </div>
     </div>
-    <!-- Session 02 End -->
     <hr>
+    <!-- Session 02 End -->
   </div>
 </template>
 

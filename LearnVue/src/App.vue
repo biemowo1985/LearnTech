@@ -1,60 +1,66 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <!-- Session 02 Start -->
+    <div class="Session">
+      <h2>Session 02</h2>
+      <p>Summary: Create Project</p>
+      <div class="Summary">
+        <p>1. Config Environment -- install Node.js</p>
+        <p>
+          2. Install vue-cli --
+          <code>npm install vue-cli -g</code>
+        </p>
+        <p>3. Create Vue project --</p>
+        <ol>
+          <li>
+            <code>vue init webpack my-project-name</code>
+          </li>
+          <li>
+            <code>vue init webpack-simple my-project-name</code>
+          </li>
+        </ol>
+        <p>
+          4. Run Project --
+          <code>npm run dev</code>
+        </p>
+      </div>
+      <p>Content:</p>
+      <div class="SessionContent">
+        <p>None.</p>
+      </div>
+    </div>
+    <!-- Session 02 End -->
+    <hr>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+      msg: "Welcome to Your Vue.js App"
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.Session {
+  margin-left: 30px;
 }
-
-h1, h2 {
-  font-weight: normal;
+code {
+  font-size: 18px;
+  color: magenta;
 }
-
-ul {
-  list-style-type: none;
-  padding: 0;
+.Summary {
+  font-style: italic;
+  color: lightcoral;
 }
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.SessionContent {
+  border: 1px solid grey;
+  width: 800px;
+  padding-left: 10px;
+  margin-bottom: 25px;
 }
 </style>

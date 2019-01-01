@@ -31,6 +31,21 @@
     </div>
     <hr>
     <!-- Session 02 End -->
+
+    <!-- Session 03 Start -->
+    <div class="Session">
+      <h2>Session 03</h2>
+      <p>Summary: Create Project</p>
+      <div class="Summary">
+        <p>1. Config Environment -- install Node.js</p>
+      </div>
+      <p>Content:</p>
+      <div class="SessionContent">
+        <p>None.</p>
+      </div>
+    </div>
+    <hr>
+    <!-- Session 03 End -->
   </div>
 </template>
 
@@ -56,6 +71,9 @@ code {
 .Summary {
   font-style: italic;
   color: lightcoral;
+}
+.Summary p{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .SessionContent {
   border: 1px solid grey;

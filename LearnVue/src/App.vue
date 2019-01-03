@@ -47,19 +47,19 @@
         <p>2. Bind Object -- Name: {{obj.name}}, Age: {{obj.age}}</p>
         <p>
           <ul>
-            <li v-for="item in list">{{item}}</li>
+            <li v-for="item in list" :key="item.id">{{item}}</li>
           </ul>
         </p>
         <p>
           <ul>
-            <li v-for="item in list1">{{item.title}}</li>
+            <li v-for="item in list1" :key="item.id">{{item.title}}</li>
           </ul>
         </p>
         <p>
           <ul>
-            <li v-for="item in list2">{{item.cate}}
+            <li v-for="item in list2" :key="item.id">{{item.cate}}
               <ol>
-                <li v-for="news in item.News">
+                <li v-for="news in item.News" :key="news.id">
                     {{news.title}}
                 </li>
               </ol>
@@ -94,7 +94,7 @@
           4. <div v-text="msg"></div>
           5. <div :class="{'red':flag,'blue':!flag}">Bind flag</div>
           6. <ul>
-            <li v-for="(item,key) in list" :class="{'red':key==1,'blue':key==2}">
+            <li v-for="(item,key) in list" :key="item.id" :class="{'red':key==1,'blue':key==2}">
               {{key}} --- {{item}}
             </li>
           </ul>
@@ -103,6 +103,39 @@
     </div>
     <hr>
     <!-- Session 04 End -->
+
+    <!-- Session 05 Start -->
+    <div class="Session">
+      <h2>Session 04</h2>
+      <p>Summary: Bind Property</p>
+      <div class="Summary">
+        <p>1. v-bind:title / :title</p>
+        <p>
+          2. v-html
+        </p>
+        <p>3. v-text -- another bind data</p>
+        <p>4. v-bind:class / :class</p>
+        <p>5. v-bind:style / :style</p>
+      </div>
+      <p>Content:</p>
+      <div class="SessionContent">
+        <p>1. Hover on <span style="color:red" :title="tooltip">This</span></p>
+        <p>
+          2. <img v-bind:src="src" alt="">
+        </p>
+          3. <div v-html="htmlContent"></div>
+          4. <div v-text="msg"></div>
+          5. <div :class="{'red':flag,'blue':!flag}">Bind flag</div>
+          6. <ul>
+            <li v-for="(item,key) in list" :key="item.id" :class="{'red':key==1,'blue':key==2}">
+              {{key}} --- {{item}}
+            </li>
+          </ul>
+          7. <div :style="{'width':styleWidth+'px','background-color':color}">v-bind:style</div>
+      </div>
+    </div>
+    <hr>
+    <!-- Session 05 End -->
   </div>
 </template>
 

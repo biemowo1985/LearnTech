@@ -10,9 +10,23 @@
       <button @click="addItems">Add</button>
     </div>
     <div>
+      <h2>In process</h2>
       <ul>
-        <li v-for="(value, key) in todoList" v-bind:key="key">
-          {{value}} -----
+        <li v-for="(value, key) in todoList" v-bind:key="key" v-if="!value.completed">
+          <input type="checkbox" v-model="value.completed">
+          {{value.title}} -----
+          <button @click="deleteItem(key)">Delete</button>
+        </li>
+      </ul>
+    </div>
+    <br>
+    <hr>
+    <div>
+      <h2>Completed</h2>
+      <ul>
+        <li v-for="(value, key) in todoList" v-bind:key="key" v-if="value.completed">
+          <input type="checkbox" v-model="value.completed">
+          {{value.title}} -----
           <button @click="deleteItem(key)">Delete</button>
         </li>
       </ul>
@@ -31,11 +45,12 @@ export default {
     };
   },
   methods: {
-    getModel() {
-      alert(this.msg);
-    },
     addItems() {
-      this.todoList.push(this.todoItem);
+      var itemObj = {
+        title: this.todoItem,
+        completed: false
+      };
+      this.todoList.push(itemObj);
       this.todoItem = "";
     },
     deleteItem(key) {

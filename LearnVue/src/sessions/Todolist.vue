@@ -13,7 +13,7 @@
       <h2>In process</h2>
       <ul>
         <li v-for="(value, key) in todoList" v-bind:key="key" v-if="!value.completed">
-          <input type="checkbox" v-model="value.completed">
+          <input type="checkbox" v-model="value.completed" @change="saveList">
           {{value.title}} -----
           <button @click="deleteItem(key)">Delete</button>
         </li>
@@ -25,7 +25,7 @@
       <h2>Completed</h2>
       <ul>
         <li v-for="(value, key) in todoList" v-bind:key="key" v-if="value.completed">
-          <input type="checkbox" v-model="value.completed">
+          <input type="checkbox" v-model="value.completed" @change="saveList">
           {{value.title}} -----
           <button @click="deleteItem(key)">Delete</button>
         </li>
@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import store from "../module/storage.js";
 export default {
   name: "todo",
   data() {
@@ -52,11 +53,22 @@ export default {
       };
       this.todoList.push(itemObj);
       this.todoItem = "";
+      store.set("list", this.todoList);
+    },
+    saveList(){
+      store.set("list",this.todoList);
     },
     deleteItem(key) {
       if (this.todoList.length > key) {
         this.todoList.splice(key, 1);
+        store.set("list", this.todoList);
       }
+    }
+  },
+  mounted() {
+    var list = store.get("list");
+    if (list) {
+      this.todoList = list;
     }
   }
 };

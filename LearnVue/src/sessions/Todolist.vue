@@ -1,5 +1,6 @@
 <template>
   <div id="todo">
+    <v-home></v-home>
     <div>
       <h1>{{msg}}</h1>
       <button class="btn btn-success">success</button>
@@ -36,6 +37,7 @@
 
 <script>
 import store from "../module/storage.js";
+import ComponentHome from "../Components/Home";
 export default {
   name: "todo",
   data() {
@@ -70,6 +72,9 @@ export default {
     if (list) {
       this.todoList = list;
     }
+  },
+  components:{
+    "v-home":ComponentHome
   }
 };
 </script>

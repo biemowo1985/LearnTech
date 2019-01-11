@@ -17,3 +17,6 @@
         b. 在App.vue文件中导入组件 - import [ComponentName] from "ComponentPath"
         c. 在App.vue文件的js部分挂载组件 - 即在与data同级的components属性中，添加一个Component对象，格式为{"ComponentNode": ComponentName}
         d. 在template标签中使用组件 - 用法与html标签类似
+
+# Session11 VUE中的生命周期函数，（总共8个函数，参考Vue官网的[生命周期图示]）
+    

@@ -28,3 +28,15 @@
         a. 插件安装：npm install 插件名 --save
         b. 在main.js文件中，import该插件：import 插件 from "插件Name"
         c. 在main.js文件中，Vue.use(插件)
+
+# Session13 VUE中的第三方请求数据插件axios
+    1. 用法可以查看axios的官方文档，简单
+
+# Session14 父子组件传值
+    1. 父组件给子组件传值(分两步)
+        a. 在父组件对子组件的调用位置，加上一个属性，并给属性赋值
+            <v-header :HeaderData='headData'></v-header>
+        b. 子组件的script中添加与data/methods同级的属性props，里面的值与父组件属性名保持一致
+            props:['HeaderData']
+        
+        note: 还可以传父组件中的函数或者父组件整个对象, 详见home & header组件代码

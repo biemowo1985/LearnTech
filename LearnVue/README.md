@@ -8,6 +8,8 @@
 
 # Session09 localStorage及将localStorage相关操作封装到独立的js文件中
     1. 封装方法详见module/storage.js文件
+        在要使用的vue组件中加入对该js文件的引用
+        import [Name] from "../module/storage.js";
     2. mounted函数 -- 生命周期函数 vue页面刷新（加载）就会调用的方法，类似构造函数
 
 
@@ -20,3 +22,9 @@
 
 # Session11 VUE中的生命周期函数，（总共8个函数，参考Vue官网的[生命周期图示]）
     
+
+# Session12 VUE中的请求数据模块
+    1. 官方提供的vue-resource插件，使用npm install安装，记得加上--save参数，表示将该插件写入package.json文件中
+        a. 插件安装：npm install 插件名 --save
+        b. 在main.js文件中，import该插件：import 插件 from "插件Name"
+        c. 在main.js文件中，Vue.use(插件)

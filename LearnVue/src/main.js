@@ -2,11 +2,12 @@
 import Vue from 'vue';
 import App from './App.vue';
 import Todo from './sessions/Todolist.vue';
-// import './assets/bootstrap/css/bootstrap.min.css'
-// import './assets/bootstrap/js/bootstrap.min'
+import RequestData from './sessions/RequestData.vue';
 
+import VueResource from 'vue-resource';
+Vue.use(VueResource);
 
 new Vue({
-  el: '#todo',
-  render: h => h(Todo)
+  el: '#RequestData',
+  render: h => h(RequestData)
 });

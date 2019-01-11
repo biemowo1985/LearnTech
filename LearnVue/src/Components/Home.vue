@@ -1,7 +1,8 @@
 <template>
   <div id="home">
-    <v-header :HeaderData='headData' :homeMethod='callHomeMethod' :home='this'></v-header>
+    <v-header ref="header" :HeaderData="headData" :homeMethod="callHomeMethod" :home="this"></v-header>
     <h2>{{msg}}</h2>
+    <button @click="getSon()">get son content</button>
   </div>
 </template>
 <script>
@@ -14,8 +15,15 @@ export default {
     };
   },
   methods: {
+    callMethod(data) {
+      alert("I am a home method, data is: " + data);
+    },
     callHomeMethod() {
       alert("I am a home method");
+    },
+    getSon() {
+      var msgFromSon = this.$refs.header.msg;
+      this.$refs.header.callSon(msgFromSon);
     }
   },
   components: { "v-header": Header }

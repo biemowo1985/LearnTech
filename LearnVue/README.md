@@ -40,3 +40,14 @@
             props:['HeaderData']
         
         note: 还可以传父组件中的函数或者父组件整个对象, 详见home & header组件代码
+
+# Session15 父子组件主动获取对方的数据和方法
+    1. 父组件主动获取子组件的数据和方法
+        a. 调用子组件的时候，定义一个ref
+            <v-header ref='header'></v-header>
+        b. 在父组件里通过
+            this.$refs.header.属性
+            this.$refs.header.方法
+    2. 子组件主动获取父组件的数据和方法
+        this.$parent.属性
+        this.$parent.方法

@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <router-link to="/home">Home</router-link>
+    <router-link to="/header">Header</router-link>
+    <router-view></router-view>
     <!-- Session 02 Start -->
     <div class="Session">
       <h2>Session 02</h2>

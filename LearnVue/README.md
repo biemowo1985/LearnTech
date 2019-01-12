@@ -51,3 +51,34 @@
     2. 子组件主动获取父组件的数据和方法
         this.$parent.属性
         this.$parent.方法
+
+# Session17 Vue路由
+    1. 使用Vue路由的步骤：
+        a. 安装vue-router,  cnpm install vue-router --save
+        b. 在main.js文件中引入vue-router, 并用Vue.use(VueRouter)来使用
+            import VueRouter from 'vue-router';
+            Vue.use(VueRouter);
+        c. 在main.js文件中创建组件
+            import Home from './Components/Home.vue';
+            import Header from './Components/Header.vue';
+        d. 配置路由
+            const routes = [
+                { path: '/home', component: Home },
+                { path: '/header', component: Header }
+            ];
+        e. 实例化VueRouter
+            const router=new VueRouter({
+                routes
+            });
+        f. 挂载路由
+            new Vue({
+                el: '#Home',
+                router,
+                render: h => h(Home)
+            });
+        g. 动态加载的路由放在根组件App.vue的模版里目标位置
+            <router-link to="/home">Home</router-link>  路由链接
+            <router-link to="/header">Header</router-link>  路由链接
+            <router-view></router-view>     *** 重点，放在根组件App.vue的模板目标位置
+
+

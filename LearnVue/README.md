@@ -82,3 +82,24 @@
             <router-view></router-view>     *** 重点，放在根组件App.vue的模板目标位置
 
 
+# Session18 Vue动态路由，传值
+    1. 动态路由传值
+        a. 配置动态路由
+            import Details from './Components/Details.vue';
+            { path: '/details/:id', component: Details },
+
+            notes: 动态路径参数以冒号开头
+
+        b. 配置请求路由链接
+            <li v-for="(item,key) in newsList" :key='key'>
+                <router-link :to="'/details/'+key">{{key}} -- {{item}}</router-link>
+            </li>
+        c. 在对应的详情页面，获取动态路由的值
+            this.$route.params
+
+    2. Get传值
+        与动态路由传值的区别：
+        a. <router-link :to="'/prodetails?pid='+key">{{key}} -- {{item}}</router-link>
+        b. this.$route.query
+        其他相同
+

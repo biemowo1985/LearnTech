@@ -3,6 +3,23 @@
     <v-header ref="header" :HeaderData="headData" :homeMethod="callHomeMethod" :home="this"></v-header>
     <h2>{{msg}}</h2>
     <button @click="getSon()">get son content</button>
+    <br>
+    <hr>
+    <br>
+    <ul>
+      <li v-for="(item,key) in newsList" :key='key'>
+        <router-link :to="'/details/'+key">{{key}} -- {{item}}</router-link>
+      </li>
+    </ul>
+
+    <br>
+    <hr>
+    <br>
+    <ul>
+      <li v-for="(item,key) in newsList" :key='key'>
+        <router-link :to="'/prodetails?pid='+key">{{key}} -- {{item}}</router-link>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -11,7 +28,8 @@ export default {
   data() {
     return {
       msg: "This is home component",
-      headData: "Home Data"
+      headData: "Home Data",
+      newsList:['111','222','333','444','555']
     };
   },
   methods: {

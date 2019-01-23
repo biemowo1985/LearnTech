@@ -1,5 +1,15 @@
 <template>
   <div id="app">
+    <el-button type="primary" size='small' icon="el-icon-search">Search</el-button>
+    <el-button size='small' plain>Get</el-button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <router-link to="/home">Home</router-link>
     <router-link to="/header">Header</router-link>
     <router-view></router-view>

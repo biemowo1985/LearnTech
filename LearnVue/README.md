@@ -103,3 +103,20 @@
         b. this.$route.query
         其他相同
 
+
+
+
+# Session24 Vue UI 框架 -- Element UI的使用
+    1. 使用方法
+        a. 安装该框架
+            cnpm i element-ui -s
+        b. 引入ElementUI组件和css文件
+            import ElementUI from 'element-ui';
+            import 'element-ui/lib/theme-chalk/index.css';
+            Vue.use(ElementUI);
+        c. 配置file_loader, 因为ElementUI组件里面有字体文件
+            将以下内容放到webpack.config.js文件的 module -> rules节点底下
+            {
+                test: /\.(eot|svf|ttf|woff|woff2)(\?\S*)?$/,
+                loader: 'file-loader'
+            }

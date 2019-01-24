@@ -15,10 +15,12 @@ import Home from './Components/Home.vue';
 import Header from './Components/Header.vue';
 import Details from './Components/Details.vue';
 import ProductDetails from './Components/ProductDetails.vue';
+import Newslist from './Components/NewsList.vue';
 
 const routes = [
   { path: '/home', component: Home },
   { path: '/header', component: Header },
+  { path: '/Newslist', component: Newslist },
   { path: '/details/:id', component: Details },
   { path: '/prodetails', component: ProductDetails },
   { path: '*', direct: '/home' }  //default direct to home

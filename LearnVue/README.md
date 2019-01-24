@@ -112,6 +112,22 @@
             routes
         });
 
+# Session20 Vue Router的路由嵌套
+    1. 配置路由
+        在Main.js文件中配置子路由
+        { 
+            path: '/User', 
+            component: User,
+            children: [
+                { path: 'useradd', component: UserAdd },
+                { path: 'userlist', component: UserList }
+            ]
+        },
+    2. 父路由里面要配置子路由里面显示的地方
+        <router-view></router-view>
+    
+
+
 # Session24 Vue UI 框架 -- Element UI的使用
     1. 使用方法
         a. 安装该框架

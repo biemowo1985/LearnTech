@@ -2,6 +2,7 @@
   <div id="app">
     <el-button type="primary" size="small" icon="el-icon-search">Search</el-button>
     <el-button size="small" plain>Get</el-button>
+    <el-button size="small" plain @click='pageRedirect()'>Redirect</el-button>
     <br>
     <br>
     <br>
@@ -213,6 +214,10 @@ export default {
     },
     changeColor() {
       this.$refs.targetDiv.style.background = "blue";
+    },
+    pageRedirect()
+    {
+      this.$router.push('Newslist');
     }
   }
 };

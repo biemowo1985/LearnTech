@@ -103,8 +103,14 @@
         b. this.$route.query
         其他相同
 
-
-
+# Session20 Vue Router的编程式导航 及 history模式路由
+    1. router.push()方法实现路由跳转
+        this.$router.push('Newslist');
+    2. history 模式 （浏览器中的路由看起来好看一些）
+        const router = new VueRouter({
+            mode:'history',
+            routes
+        });
 
 # Session24 Vue UI 框架 -- Element UI的使用
     1. 使用方法

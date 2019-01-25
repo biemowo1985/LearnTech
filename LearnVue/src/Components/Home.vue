@@ -1,5 +1,8 @@
 <template>
   <div id="home">
+    <h2>Test vuex -- state -- {{this.$store.state.count}}</h2>
+    <br>
+    <button @click='countPlus()'>+1</button>
     <v-header ref="header" :HeaderData="headData" :homeMethod="callHomeMethod" :home="this"></v-header>
     <h2>{{msg}}</h2>
     <button @click="getSon()">get son content</button>
@@ -24,6 +27,7 @@
 </template>
 <script>
 import Header from "./Header";
+import store from '../vuex/store.js'
 export default {
   data() {
     return {
@@ -32,6 +36,7 @@ export default {
       newsList:['111','222','333','444','555']
     };
   },
+  store,
   methods: {
     callMethod(data) {
       alert("I am a home method, data is: " + data);
@@ -42,6 +47,9 @@ export default {
     getSon() {
       var msgFromSon = this.$refs.header.msg;
       this.$refs.header.callSon(msgFromSon);
+    },
+    countPlus(){
+      this.$store.commit('incCount');
     }
   },
   components: { "v-header": Header }

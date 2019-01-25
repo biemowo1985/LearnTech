@@ -143,8 +143,34 @@
                 loader: 'file-loader'
             }
 
-# Session24 路由的模块化
+# Session26 路由的模块化
     1. 新建一个js文件，在route文件夹下的Router.js
     2. 将main.js文件中关于路由操作的代码放入该文件，并导入vue
         import Vue from 'vue';      //因为要用到vue.use()
     3. 在main.js文件中导入Router.js文件
+
+# Session27 Vuex
+    1. Vuex主要解决的问题：
+        a. 不同组件的数据共享问题
+        b. 组件中的数据持久化问题
+    2. Vuex的使用方法
+        a. 安装Vuex
+            npm install vuex --save
+        b. 创建一个vuex文件夹，并在其中创建store.js文件
+        c. 在store.js文件中引入vuex
+            import Vue from 'vue';
+            import Vuex from 'vuex';
+            Vue.use(Vuex);
+        d. 在组件中使用vuex
+            1). 引入store
+                import store from '../vuex/store.js'
+            2). 注册store
+                export default {
+                    store
+                }
+            3). 获取vuex里面的数据
+                this.$store.state.[数据]
+            4). 触发mutations来改变state里面的数据
+                this.$store.commit('incCount');
+
+        

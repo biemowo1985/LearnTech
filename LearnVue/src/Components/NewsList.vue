@@ -5,9 +5,12 @@
       <el-table-column prop="title" label="Title"></el-table-column>
       <el-table-column prop="address" label="See Details"></el-table-column>
     </el-table>
+    <h2>Vuex in News Page -- {{this.$store.state.count}}</h2>
+    <button @click='countPlus()'>+1</button>
   </div>
 </template>
 <script>
+import store from '../vuex/store.js'
 export default {
   data() {
     return {
@@ -15,6 +18,7 @@ export default {
       list: []
     };
   },
+  store,
   methods: {
     getNewsList() {
       var api =
@@ -28,6 +32,9 @@ export default {
           console.log(err);
         }
       );
+    },
+    countPlus(){
+      this.$store.commit('incCount');
     }
   },
   mounted() {

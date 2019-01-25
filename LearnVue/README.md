@@ -112,7 +112,7 @@
             routes
         });
 
-# Session20 Vue Router的路由嵌套
+# Session21 Vue Router的路由嵌套
     1. 配置路由
         在Main.js文件中配置子路由
         { 
@@ -142,3 +142,9 @@
                 test: /\.(eot|svf|ttf|woff|woff2)(\?\S*)?$/,
                 loader: 'file-loader'
             }
+
+# Session24 路由的模块化
+    1. 新建一个js文件，在route文件夹下的Router.js
+    2. 将main.js文件中关于路由操作的代码放入该文件，并导入vue
+        import Vue from 'vue';      //因为要用到vue.use()
+    3. 在main.js文件中导入Router.js文件

@@ -26,4 +26,14 @@ This project is based on the Video Training(ITYing.com - Teacher Da Di)
             cd my-app-name
         运行项目
             npm start
+
+# Session 03 手动创建Electron项目
+    1. 新建文件夹
+    2. 新建index.html和main.js文件
+    3. 创建package.json元数据文件，管理项目
+        npm init --yes
+    4. 创建好以后，在main.js文件里面写具体代码
+    5. 用electron .命令运行软件
+        or 在package.json文件中配置 "start": "electron ."，实现用npm start实现软件运行
+
         

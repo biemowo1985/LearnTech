@@ -1,13 +1,13 @@
-//Main process
-var electron = require('electron');
-var path = require('path');
+/*jshint esversion:6 */
+const electron = require('electron');
 const app = electron.app;
-var BrowserWindow = electron.BrowserWindow;
+const BrowserWindow = electron.BrowserWindow;
+const path = require('path');//node.js
+
 var mainWindow = null;
 
 app.on('ready', function () {
-    mainWindow = new BrowserWindow({ width: 400, height: 400 });
-    //1. use loadFile method or
+    mainWindow = new BrowserWindow({ width: 800, height: 600 });
     //mainWindow.loadFile('index.html');
     mainWindow.loadURL(path.join('file:', __dirname, 'index.html'));
 

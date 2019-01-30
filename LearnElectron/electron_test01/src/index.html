@@ -1,10 +1,138 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    Well hey there!!!
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script>
+    window.$ = window.jQuery = require('../node_modules/jquery/dist/jquery.min.js');
+    require('../node_modules/bootstrap/dist/js/bootstrap.min.js');
+  </script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Lato, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.72222;
+      color: #34495e;
+      background-color: #fff;
+    }
+
+    .wrap {
+      min-width: 100%;
+      position: absolute;
+      background: #eff3f6 bottom;
+      min-height: 100%;
+      overflow: hidden;
+    }
+
+    .left {
+      margin-left: 0px;
+      position: absolute;
+      box-sizing: border-box;
+      width: 200px;
+      height: 100%;
+      background: #4d5e70 bottom;
+    }
+
+    .logoDiv {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      height: 70px;
+      background-color: #354457;
+      font-size: 17px;
+      color: #fff;
+      vertical-align: bottom;
+    }
+
+    .logoTitle {
+      margin-left: 15px;
+      line-height: 1.7;
+    }
+
+    .menu-title {
+      margin-left: 15px;
+      color: #828e9a;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .menu-item {
+      padding-left: 15px;
+      line-height: 40px;
+      height: 40px;
+      color: #aab1b7;
+      cursor: pointer;
+    }
+
+    .menu-item-active {
+      background-color: #3d4e60;
+      border-right: 4px solid #647f9d;
+      color: #fff;
+    }
+
+    .right {
+      box-sizing: border-box;
+      float: left;
+      box-sizing: border-box;
+      padding-left: 200px;
+      overflow-y: overlay;
+      overflow-x: hidden;
+      clear: both;
+      color: #717592;
+      min-width: 100%;
+      min-height: 500px;
+    }
+    .hover{
+      background-color: #d9edf7;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- Left Content -->
+    <div id="left" class="left">
+      <div id="logoDiv" class="logoDiv">
+        <p id="logoTitle" class="logoTitle">
+          <img id="logo" alt="Import Tool" src="http://tool.what21.com/page/image/menu/cf.png" style="height: 28px; padding-right: 5px;vertical-align: middle;">
+          <span style="font-size:18px;">Import Tool</span>
+        </p>
+      </div>
+      <div class="panel panel-default" style="border-Radius:0px;">
+        <ul class="list-group">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Right Content -->
+    <div id="right" class="tab-content right">
+      right
+    </div>
+  </div>
+</body>
+<script>
+  $(function () {
+    $(".list-group-item").click(function () {
+      $(this).addClass("menu-item-active");
+    });
+
+    $(".list-group-item").hover(function () {
+      $(this).addClass("hover");
+    });
+
+    $(".list-group-item").mouseleave(function () {
+      $(this).removeClass("hover");
+    });
+  });
+</script>
+
 </html>

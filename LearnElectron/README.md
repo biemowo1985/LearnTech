@@ -36,4 +36,16 @@ This project is based on the Video Training(ITYing.com - Teacher Da Di)
     5. 用electron .命令运行软件
         or 在package.json文件中配置 "start": "electron ."，实现用npm start实现软件运行
 
-        
+# Session 04 Electron运行流程、主进程和渲染进程
+    1. 在index.html文件中引入渲染进程文件Reader.js
+        <script type="text/javascript" src='Reader.js'></script>
+    2. 在渲染进程文件Reader.js中，使用node.js的fs模块，读取文件内容
+        var fs = require('fs');
+        fs.readFile('package.json', function (err, data) {
+            if (err) {
+                console.log(err.message);
+            }
+            else {
+                txtaContent.innerHTML = data;
+            }
+        });

@@ -65,4 +65,8 @@ This project is based on the Video Training(ITYing.com - Teacher Da Di)
         npm run dev
 
 # Session21 Electron+Vue项目 主进程和渲染进程交互
-    1. 
+    1. 渲染进程给主进程广播数据
+        this.$electron.ipcRenderer.send("toMain", "data from Renderer");
+    2. 访问electron原生API
+        this.$electron.shell.openExternal(url);
+

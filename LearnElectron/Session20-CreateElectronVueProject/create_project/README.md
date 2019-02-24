@@ -23,3 +23,22 @@
    尝试使用
 
 # Session23 Electron+Vue中隐藏顶部菜单 隐藏关闭按钮、自定义关闭 最大化 最小化按钮
+   1. 单独隐藏顶部菜单
+      mainWindow.setMenu(null);
+   2. 隐藏系统默认的关闭按钮，最大化、最小化按钮
+      在BrowserWindow实例里面，设置属性 frame: false即可实现
+   3. 自定义关闭，最大化，最小化按钮
+      <1. 先在按钮处定义点击动作函数
+         @click="btnMinimize"
+         btnMinimize() {
+            this.$electron.ipcRenderer.send("window-min");
+         }
+      <2. 在主进程中监听渲染进程广播的数据
+         ipcMain.on('window-min', () => {
+            mainWindow.minimize();
+         });
+   4. 定义可拖拽
+         可拖拽的 css:
+         -webkit-app-region: drag;
+         不可拖拽的 css:
+         -webkit-app-region: no-drag;

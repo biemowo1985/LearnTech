@@ -41,7 +41,6 @@ export default {
 #dragable {
   position: relative;
   -webkit-app-region: drag;
-  border: 1px solid red;
   height: 50px;
 }
 #btn {

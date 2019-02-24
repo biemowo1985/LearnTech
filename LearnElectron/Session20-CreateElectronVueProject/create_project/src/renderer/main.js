@@ -9,6 +9,10 @@ import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(Element);
 
+//import db module
+import db from './Tools/data-store.js';
+Vue.prototype.$db = db;
+
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'));
 Vue.http = Vue.prototype.$http = axios;
 Vue.config.productionTip = false;

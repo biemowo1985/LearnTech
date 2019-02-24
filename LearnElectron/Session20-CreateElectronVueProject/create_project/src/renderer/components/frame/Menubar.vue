@@ -18,15 +18,22 @@
         <i class="el-icon-setting"></i>
         <span slot="title">Nav 3</span>
       </el-menu-item>
-      <el-menu-item index="4">
+      <el-menu-item index="4" @click="handleDB">
         <i class="el-icon-setting"></i>
-        <span slot="title">Nav 4</span>
+        <span slot="title">Handle DB</span>
       </el-menu-item>
     </el-menu>
   </div>
 </template>
 
 <script>
+export default {
+  methods: {
+    handleDB() {
+      this.$router.push("/db");
+    }
+  }
+};
 </script>
 
 <style scoped>

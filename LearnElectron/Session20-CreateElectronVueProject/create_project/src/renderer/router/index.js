@@ -6,6 +6,7 @@ Vue.use(Router);
 
 import Home from '@/components/Home.vue';
 import News from '@/components/News.vue';
+import HandleDB from '@/components/HandleNedb.vue';
 
 export default new Router({
   routes: [
@@ -18,6 +19,11 @@ export default new Router({
       path: '/news',
       name: 'News',
       component: News
+    },
+    {
+      path: '/db',
+      name: 'DB',
+      component: HandleDB
     },
     {
       path: '*',

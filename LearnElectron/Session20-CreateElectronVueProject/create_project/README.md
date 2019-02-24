@@ -42,3 +42,38 @@
          -webkit-app-region: drag;
          不可拖拽的 css:
          -webkit-app-region: no-drag;
+
+# Session24 Electron+Vue中操作Nedb数据库
+	1、安装nedb数据库
+		cnpm install nedb --save
+
+	2、新建一个src/renderer/datastore.js
+		import Datastore from 'nedb'
+		import path from 'path'
+		import { remote } from 'electron'
+
+		export default new Datastore({
+  			autoload: true,
+  			filename: path.join(remote.app.getPath('userData'), '/data.db')
+		})
+
+	3、src/renderer/main.js
+		import db from './datastore.js'
+		Vue.prototype.$db = db
+
+	4、在vue的组件里面实现数据的增加 修改 删除 显示
+		this.$db.insert({},function(){
+			
+		})
+
+		this.$db.find({},function(){
+			//获取查询的数据
+		})
+
+		this.$db.update({条件},{$set:{更改的数据}},function(){
+			
+		})
+
+		this.$db.remove({条件},{},function(){
+			
+		})

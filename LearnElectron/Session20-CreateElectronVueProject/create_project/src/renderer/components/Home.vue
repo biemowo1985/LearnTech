@@ -3,9 +3,11 @@
     {{msg}}
     <div>
       <button @click="sendMsg">Send message to main</button>
-      <a href="http://www.baidu.com" @click.prevent="openUrl($event)">Baidu.com</a>
+      <a href="http://www.baidu.com" @click="openUrl($event)">Baidu.com</a>
       <button @click="readFile">Use node module</button>
       <div id="packageContent" style="width:600px; height:200px; background-color:#abbcd3"></div>
+
+      <router-link to="/news">Goto News</router-link>
     </div>
   </div>
 </template>
@@ -21,8 +23,9 @@ export default {
     sendMsg() {
       this.$electron.ipcRenderer.send("toMain", "data from Renderer");
     },
-    openUrl(event) {
-      var url = event.srcElement.href;
+    openUrl(e) {
+      e.preventDefault();
+      var url = e.srcElement.href;
       this.$electron.shell.openExternal(url);
     },
     readFile() {

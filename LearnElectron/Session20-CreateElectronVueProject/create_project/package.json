@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Kevin Yang <kyang@touchpointmed.com>",
   "description": "An electron-vue project",
-  "license": null,
+  "license": "null",
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-container>
+    <el-container style='height:768px'>
       <el-aside width="200px" style="background-color:#E4E7ED">
         <el-row>
           <el-col :span="24">

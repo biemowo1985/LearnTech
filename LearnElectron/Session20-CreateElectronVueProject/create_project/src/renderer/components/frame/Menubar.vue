@@ -14,9 +14,9 @@
         <i class="el-icon-setting"></i>
         <span slot="title">Nav 2</span>
       </el-menu-item>
-      <el-menu-item index="3">
+      <el-menu-item index="3" @click="handleAPI">
         <i class="el-icon-setting"></i>
-        <span slot="title">Nav 3</span>
+        <span slot="title">Request API</span>
       </el-menu-item>
       <el-menu-item index="4" @click="handleDB">
         <i class="el-icon-setting"></i>
@@ -31,6 +31,10 @@ export default {
   methods: {
     handleDB() {
       this.$router.push("/db");
+    },
+    handleAPI()
+    {
+      this.$router.push("/apis");
     }
   }
 };

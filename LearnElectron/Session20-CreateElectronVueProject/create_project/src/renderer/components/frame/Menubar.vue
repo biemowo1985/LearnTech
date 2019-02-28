@@ -6,13 +6,13 @@
       text-color="#fff"
       active-text-color="#EB0303"
     >
-      <el-menu-item index="1">
+      <el-menu-item index="1" @click="handleHome">
         <i class="el-icon-menu"></i>
-        <span slot="title">Nav 1</span>
+        <span slot="title">Home</span>
       </el-menu-item>
-      <el-menu-item index="2">
+      <el-menu-item index="2" @click="handleNews">
         <i class="el-icon-setting"></i>
-        <span slot="title">Nav 2</span>
+        <span slot="title">News</span>
       </el-menu-item>
       <el-menu-item index="3" @click="handleAPI">
         <i class="el-icon-setting"></i>
@@ -29,6 +29,12 @@
 <script>
 export default {
   methods: {
+    handleHome(){
+      this.$router.push("/");
+    },
+    handleNews(){
+      this.$router.push("/news");
+    },
     handleDB() {
       this.$router.push("/db");
     },

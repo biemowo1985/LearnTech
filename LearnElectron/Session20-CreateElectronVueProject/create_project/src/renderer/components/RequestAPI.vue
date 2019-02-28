@@ -15,25 +15,31 @@
     </el-row>
     <el-row>
       <el-col :span="24">
-        <el-table :data="tableData" border="true" style="width: 100%">
-          <el-table-column prop="FormularyID" label="ID" width="180"></el-table-column>
-          <el-table-column prop="BrandName" label="Brand Name" width="180"></el-table-column>
-          <el-table-column prop="CommonName" label="Common Name"></el-table-column>
-          <el-table-column prop="Active" label="Active"></el-table-column>
-          <el-table-column prop="TimeStamp" label="Date"></el-table-column>
+        <el-table
+          :data="tableData"
+          stripe="true"
+          highlight-current-row="true"
+          border="true"
+          style="width: 100%"
+        >
+          <el-table-column prop="formularyID" label="ID" width="60"></el-table-column>
+          <el-table-column prop="brandName" label="Brand Name" ></el-table-column>
+          <el-table-column prop="commonName" label="Common Name" ></el-table-column>
+          <el-table-column prop="active" label="Active" width="60" :formatter="activeFormat"></el-table-column>
+          <el-table-column prop="timeStamp" label="Date" width="120" :formatter="datetimeFormat"></el-table-column>
         </el-table>
       </el-col>
     </el-row>
-    <el-row>
+    <el-row justify="center" style="text-align:center;margin-top:10px;">
       <el-col :span="24">
         <el-pagination
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
           :current-page="pageIndex"
           :page-sizes="[5, 10, 15, 20]"
-          :page-size="10"
+          :page-size="pageSize"
           layout="total, sizes, prev, pager, next, jumper"
-          :total="400"
+          :total="totalCount"
         ></el-pagination>
       </el-col>
     </el-row>
@@ -47,20 +53,62 @@ export default {
       msg: "Request API Component",
       search_common_name: "",
       tableData: [],
-      pageIndex: 1
+      pageIndex: 1,
+      pageSize: 10,
+      totalCount: 0
     };
   },
   methods: {
     handleSizeChange(val) {
-        console.log(`每页 ${val} 条`);
-      },
-      handleCurrentChange(val) {
-        console.log(`当前页:${val}`);
+      this.pageSize = val;
+      this.requestData();
+    },
+    handleCurrentChange(val) {
+      this.pageIndex = val;
+      this.requestData();
+    },
+    activeFormat(row, column, cellValue, index) {
+      if (cellValue) {
+        return cellValue.toString();
+      } else {
+        return "";
       }
+    },
+    datetimeFormat(row, column, cellValue, index) {
+      var result = this.$fecha.format(new Date(cellValue), "MM/DD/YYYY");
+      return result;
+    },
+    requestData() {
+      var pagedObj = { PageIndex: this.pageIndex, PageSize: this.pageSize };
+      var api = "https://localhost:44338/api/values/query"; //?PageIndex=2&PageSize=5";
+      //var api = "http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1";
+      this.$http
+        .get(api, {
+          params: pagedObj
+        })
+        .then(response => {
+          // handle success
+          this.tableData = response.data.dataResult;
+          this.totalCount = response.data.totalCount;
+        })
+        .catch(function(error) {
+          // handle error
+          console.log(error);
+        })
+        .then(function() {
+          // always executed
+        });
+    }
+  },
+  mounted() {
+    this.requestData();
   }
 };
 </script>
 
 <style>
 /* CSS */
+#request_api {
+  margin: 5px;
+}
 </style>

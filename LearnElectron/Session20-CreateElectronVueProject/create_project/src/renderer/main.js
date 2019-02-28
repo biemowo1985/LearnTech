@@ -13,6 +13,9 @@ Vue.use(Element);
 import db from './Tools/data-store.js';
 Vue.prototype.$db = db;
 
+import fecha from 'fecha';
+Vue.prototype.$fecha=fecha;
+
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'));
 Vue.http = Vue.prototype.$http = axios;
 Vue.config.productionTip = false;

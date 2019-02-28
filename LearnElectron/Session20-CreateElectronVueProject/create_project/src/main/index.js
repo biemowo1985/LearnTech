@@ -23,9 +23,9 @@ function createWindow() {
     frame: false,
     maximizable: false
   });
-
+  
   mainWindow.loadURL(winURL);
-
+  //mainWindow.webContents.openDevTools();
   mainWindow.on('closed', () => {
     mainWindow = null;
   });

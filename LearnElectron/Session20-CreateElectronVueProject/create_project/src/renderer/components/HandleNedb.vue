@@ -18,6 +18,7 @@
       <el-button type="primary" @click="find" size="small" plain>Find</el-button>
       <el-button type="warning" @click="update" size="small" plain>Update</el-button>
       <el-button type="danger" @click="remove" size="small" plain>Delete</el-button>
+      <el-button type="danger" @click="btnTest" size="small" plain>Test</el-button>
       <br>
       <router-link to="/home">Go home</router-link>
     </el-row>
@@ -25,6 +26,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -82,6 +84,10 @@ export default {
           console.log(data);
         }
       });
+    },
+
+    btnTest(){
+    
     }
   }
 };

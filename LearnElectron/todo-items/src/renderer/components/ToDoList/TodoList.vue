@@ -1,6 +1,9 @@
 <template>
   <div id="TodoList">
     <Header></Header>
+    <el-button icon="el-icon-plus" @click="addEvent" size="mini" plain></el-button>
+    <el-button icon="el-icon-error" @click="clearAll" size="mini" plain></el-button>
+    <el-button icon="el-icon-info" @click="mytest" size="mini" plain></el-button>
     <el-alert title="To Do Events" type="success" :closable="false"></el-alert>
     <el-collapse accordion>
       <!-- <el-collapse accordion v-if="todoList.length > 0"> -->
@@ -73,7 +76,50 @@ export default {
       checked: true
     };
   },
-  components: { Header }
+  components: { Header },
+  methods: {
+    addEvent() {
+      var doc = {
+        title: "world",
+        content: "",
+        completed: false,
+        recordActive: true,
+        addedTime: new Date().toLocaleString()
+      };
+      this.$db.insert(doc, function(err) {
+        if (err) {
+          alert(err.message);
+        } else {
+          alert("ok");
+        }
+      });
+    },
+
+    mytest() {
+      this.$db.find({}, function(err, docs) {
+        if (err) {
+          alert(err.message);
+        } else {
+          var result = "";
+          docs.forEach(element => {
+            result += element._id + " | ";
+          });
+          alert(result);
+        }
+      });
+    },
+
+    //clear
+    clearAll() {
+      this.$db.remove({}, { multi: true }, function(err, numRemoved) {
+        if (err) {
+          alert(err.message);
+        } else {
+          alert("cleared");
+        }
+      });
+    }
+  }
 };
 </script>
 

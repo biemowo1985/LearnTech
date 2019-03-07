@@ -50,25 +50,4 @@ This project is based on the Video Training(ITYing.com - Teacher Da Di)
             }
         });
 
-# Session20 Electron+Vue项目安装、搭建
-    1. 环境安装
-       a. 全局安装Vue脚手架工具 cnpm install -g vue-cli
-       b. 全局安装Electron  cnpm install -g electron
-    
-    2. 用Vue脚手架工具创建项目   
-       vue init simulatedgreg/electron-vue [my-project]
-    
-    3. 安装项目依赖
-       cnpm install
-
-    4. 运行软件
-        npm run dev
-
-# Session21 Electron+Vue项目 主进程和渲染进程交互
-    1. 渲染进程给主进程广播数据
-        this.$electron.ipcRenderer.send("toMain", "data from Renderer");
-    2. 访问electron原生API
-        this.$electron.shell.openExternal(url);
-
-# Session21 Electron+Vue UI框架ElementUI的使用
-    1. 
+# Session20 至 24的笔记在Session20项目文件夹中。。。

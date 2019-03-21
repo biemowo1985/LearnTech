@@ -50,7 +50,8 @@
     "bootstrap": "^4.3.1",
     "electron-compile": "^6.4.4",
     "electron-squirrel-startup": "^1.0.0",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "mssql": "^5.0.3"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",

@@ -3,3 +3,14 @@
 ################################################################################
 
 /ElectronService/.vs
+/ElectronService/src/ElectronService/bin/Debug/netcoreapp1.0/ElectronService.runtimeconfig.json
+/ElectronService/src/ElectronService/bin/Debug/netcoreapp1.0/ElectronService.runtimeconfig.dev.json
+/ElectronService/src/ElectronService/bin/Debug/netcoreapp1.0/ElectronService.pdb
+/ElectronService/src/ElectronService/bin/Debug/netcoreapp1.0/ElectronService.dll
+/ElectronService/src/ElectronService/bin/Debug/netcoreapp1.0/ElectronService.deps.json
+/ElectronService/src/ElectronService/obj/Debug/netcoreapp1.0/ElectronServicedotnet-compile.deps.json
+/ElectronService/src/ElectronService/obj/Debug/netcoreapp1.0/dotnet-compile.rsp
+/ElectronService/src/ElectronService/obj/Debug/netcoreapp1.0/dotnet-compile.assemblyinfo.cs
+/ElectronService/src/ElectronService/obj/Debug/netcoreapp1.0/dotnet-compile-csc.rsp
+/ElectronService/src/ElectronService/obj/Debug/netcoreapp1.0/.SDKVersion
+/ElectronService/src/ElectronService/obj/Debug/netcoreapp1.0/.IncrementalCache

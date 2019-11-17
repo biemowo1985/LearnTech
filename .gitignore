@@ -2,6 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+node_modules/
 /ElectronService/.vs/config/applicationhost.config
 /ElectronService/.vs/ElectronService/v14/.suo
 /ElectronService/.vs/restore.dg

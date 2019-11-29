@@ -21,8 +21,51 @@ class Student extends Person {
     print() {
         console.log(`Print: Sex is ${this._sSex}`);
     }
+
+    //Static Method
+    static run() {
+        console.log('This is static run method.');
+    }
 }
 
 var s = new Student('Kevin', 18, 'Male');
 s.getInfo();
 s.print();
+
+//Call static method
+Student.run();
+
+
+//Single Instance
+class Database {
+    static getInstance() {
+        if (!Database.Instance) {
+            Database.Instance = new Database();
+        }
+        return Database.Instance;
+    }
+
+    constructor() {
+        console.log('Create Database Instance...');
+        this.connect();
+    }
+
+    connect() {
+        console.log('Connecting Database...');
+    }
+
+    query(queryType) {
+        console.log(`The query type is ${queryType}`);
+    }
+}
+
+console.log('------------ Single Instance Start... -----------');
+
+var db1 = Database.getInstance();
+db1.query('ADD');
+var db2 = Database.getInstance();
+db2.query('DELETE');
+var db3 = Database.getInstance();
+db3.query('UPDATE');
+var db4 = Database.getInstance();
+db4.query('QUERY');

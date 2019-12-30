@@ -1,0 +1,27 @@
+﻿<configuration>
+  <configSections>
+    <!--<section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Microsoft.Practices.Unity.Configuration"/>-->
+    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Unity.Configuration"/>
+  </configSections>
+  <unity>
+    <containers>
+      <container name="testContainer">
+        <register type="Ruanmou.Interface.IPhone,Ruanmou.Interface" mapTo="Ruanmou.Service.ApplePhone, Ruanmou.Service"/>
+        <register type="Ruanmou.Interface.IMicrophone, Ruanmou.Interface" mapTo="Ruanmou.Service.Microphone, Ruanmou.Service"/>
+        <register type="Ruanmou.Interface.IHeadphone, Ruanmou.Interface" mapTo="Ruanmou.Service.Headphone, Ruanmou.Service"/>
+        <register type="Ruanmou.Interface.IPower, Ruanmou.Interface" mapTo="Ruanmou.Service.Power, Ruanmou.Service"/>
+        <register type="Ruanmou.Interface.IPhone,Ruanmou.Interface" mapTo="Ruanmou.Service.AndroidPhone, Ruanmou.Service" name="android"/>
+        <register type="Ruanmou.Interface.IPhone,Ruanmou.Interface" mapTo="Ruanmou.Service.ApplePhone, Ruanmou.Service" name="apple"/>
+      </container>
+
+      <container name="testContainerExtend">
+        <register type="Ruanmou.Interface.IPhone,Ruanmou.Interface" mapTo="Ruanmou.ServiceExtend.ApplePhoneExtend, Ruanmou.ServiceExtend"/>
+        <register type="Ruanmou.Interface.IMicrophone, Ruanmou.Interface" mapTo="Ruanmou.ServiceExtend.MicrophoneExtend, Ruanmou.ServiceExtend"/>
+        <register type="Ruanmou.Interface.IHeadphone, Ruanmou.Interface" mapTo="Ruanmou.ServiceExtend.HeadphoneExtend, Ruanmou.ServiceExtend"/>
+        <register type="Ruanmou.Interface.IPower, Ruanmou.Interface" mapTo="Ruanmou.ServiceExtend.PowerExtend, Ruanmou.ServiceExtend"/>
+        <register type="Ruanmou.Interface.IPhone,Ruanmou.Interface" mapTo="Ruanmou.ServiceExtend.AndroidPhoneExtend, Ruanmou.ServiceExtend" name="android"/>
+        <register type="Ruanmou.Interface.IPhone,Ruanmou.Interface" mapTo="Ruanmou.ServiceExtend.ApplePhoneExtend, Ruanmou.ServiceExtend" name="apple"/>
+      </container>
+    </containers>
+  </unity>
+</configuration>
